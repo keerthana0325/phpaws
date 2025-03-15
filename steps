@@ -1,0 +1,31 @@
+steps to deploy a php website on aws (ec2)
+
+ - Launch the ec2 instance 
+ - connect through putty
+ - cmd : (if you are using ubuntu just login as "ubuntu" if amzn linux "ec2-user")
+ - cmd : sudo apt update (//can also us sudo apt upgrade)
+ - cmd : apt install apache2 -y (installs the webserver)
+ - cmd : service apache2 start (//starts the server)
+ - cmd : service apache2 status (//gives the status ,  you can go the public ip and review the home page)
+ - assuming that you are in home directory (i.e /home/ubuntu/)
+ - cmd : cd /var/www/html/ (the default path apache2)
+ - cmd : ls (the eg index file will be there , just remove it with , cmd : rm index.html)
+ - cmd : apt install php
+ ---------------------------------------------------------
+
+ <through file zillla copy the required folder from local machine to the ec2 server>
+
+ - Folder will be in "/home/ubuntu"
+
+ # gotta move this to the "/var/www/html/" path so ,
+
+ - cmd : mv folder_name /var/www/html/ (eg , mv basic /var/www/html)
+ - cmd : cd /etc/apache2/sites-available/
+ - cmd : ls (you'd get two .conf files)
+ - cmd : nano "the first config file"
+ # enter inside the config file and put the name of of your folder in them
+ - cmd : service apache2 restart (//restarts the apache)
+ - cmd : service apache2 status 
+ ---------------------------------------------------------------
+ 
+ refresh the page the website will be live
